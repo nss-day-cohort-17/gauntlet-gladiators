@@ -46,7 +46,11 @@ $(document).ready(function() {
         userName = $("#player-name").val();
         moveAlong = ($("#player-name").val() !== "");
         break;
+      // Generate player object upon race selection
       case "card--class":
+        if(userRace === "Human") {
+          player = new Gauntlet.Combatants.Human()
+        }
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
@@ -73,8 +77,10 @@ $(document).ready(function() {
   });
 
   $(".race__link").click(function(e) {
-    userRace = e.target.innerText;
-    console.log(userRace)
+    console.dir(e.target.closest('.race__link').id)
+    userRace = e.target.closest('.race__link').id
   });
 
 });
+
+

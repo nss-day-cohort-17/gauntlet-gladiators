@@ -193,19 +193,28 @@
            href="#"
            next="card--battleground">
           <span class="btn__prompt">></span>
-          <span class="btn__text">defeat your enemies</span>
+          <span class="btn__text">Go to battle</span>
         </a>
       </div>
     </section>
-<!-- WTO BATTLE -->
+<!-- TO BATTLE!!! -->
     <section id="battleground" class="card card--battleground">
-      <h1>Battle</h1>
-      <a class="card__link btn btn--big btn--orange"
-           href="#"
-           next="card--battleground">
-          <span class="btn__prompt">></span>
-          <span class="btn__text">defeat your enemies</span>
-        </a>
+      <div class="row">
+        <div class="col-md-12"><h1>Battle</h1></div>
+        <div class="col-md-6">
+          <div id="playerHere"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="enyHere"></div>
+        </div>
+        <div class="col-md-12">
+          <a id="attack" class="card__link btn btn--big btn--orange"
+             href="#">
+            <span class="btn__prompt">></span>
+            <span class="btn__text">Attack!</span>
+          </a>
+        </div>
+      </div>
    </section>
 
 
@@ -218,6 +227,7 @@
   <script src="javascripts/spells.js"></script>
   <script src="javascripts/player.js"></script>
   <script src="javascripts/enemies.js"></script>
+  <script src="javascripts/combat.js"></script>
   <script src="javascripts/app.js"></script>
 
 </body>

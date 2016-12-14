@@ -92,7 +92,7 @@ Gauntlet.Combatants.Elf = function() {
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
   this.skinColor = this.skinColors[randomSkin];
 
-  this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Monk"];
+  this.allowedClasses = ["Sorcerer", "Shaman", "Monk"];
 };
 Gauntlet.Combatants.Elf.prototype = new Gauntlet.Combatants.Player();
 

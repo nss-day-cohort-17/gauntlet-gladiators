@@ -40,6 +40,7 @@ $(document).ready(function() {
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
+    console.log("next card is: " + nextCard)
 
     switch (nextCard) {
       case "card--race":
@@ -68,6 +69,14 @@ $(document).ready(function() {
     if (moveAlong) {
       $(".card").hide();
       $("." + nextCard).show();
+      // Show / hide buttons on the class page
+      if(nextCard === "card--class") {
+        $(".class__button").hide()
+        for(var i = 0; i < player.allowedClasses.length; i++) {
+          $("#" + player.allowedClasses[i]).show()
+          console.log(player.allowedClasses[i])
+        }
+      }
     }
   });
 

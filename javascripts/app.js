@@ -40,26 +40,25 @@ $(document).ready(function() {
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
-    console.log("next card is: " + nextCard)
 
     switch (nextCard) {
       case "card--race":
         userName = $("#player-name").val();
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = (userName !== "");
         break;
       // Generate player object upon race selection
       case "card--class":
-        if(userRace === "Human") {
-          player = new Gauntlet.Combatants.Human()
+        if(userRace !== "") {
+          player = new Gauntlet.Combatants[userRace]()
+          player.playerName = userName
         }
-        else if (userRace === "Elf") {
-          player = new Gauntlet.Combatants.Elf()
-        }
-        player.playerName = userName
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = (userRace !== "");
         break;
       case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
+        if(userClass !== "") {
+          player.assignClass(userClass)
+        }
+        moveAlong = (userClass !== "");
         break;
       case "card--battleground":
         moveAlong = ($("#player-name").val() !== "");
@@ -69,15 +68,16 @@ $(document).ready(function() {
     if (moveAlong) {
       $(".card").hide();
       $("." + nextCard).show();
-      // Show / hide buttons on the class page
+      // Hides class buttons that do not apply to that race
       if(nextCard === "card--class") {
         $(".class__button").hide()
         for(var i = 0; i < player.allowedClasses.length; i++) {
-          $("#" + player.allowedClasses[i]).show()
-          console.log(player.allowedClasses[i])
+          $('#' + player.allowedClasses[i]).parent().parent().show()
         }
       }
     }
+
+
   });
 
   /*
@@ -89,9 +89,21 @@ $(document).ready(function() {
     $("." + previousCard).show();
   });
 
+  /*
+    When a button with a race on it is clicked,
+    Assign that id to a variable
+   */
   $(".race__link").click(function(e) {
     userRace = e.target.closest('.race__link').id
   });
+
+  /*
+    When a button with a class on it is clicked,
+    Assign that id to a variable
+   */
+  $(".class__link").click(function(e) {
+    userClass = e.target.closest('.class__link').id
+  })
 
 });
 

@@ -44,13 +44,15 @@ $(document).ready(function() {
     switch (nextCard) {
       case "card--race":
         userName = $("#player-name").val();
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = (userName !== "");
         break;
       // Generate player object upon race selection
       case "card--class":
-        player = new Gauntlet.Combatants[userRace]()
-        player.playerName = userName
-        moveAlong = ($("#player-name").val() !== "");
+        if(userRace !== "") {
+          player = new Gauntlet.Combatants[userRace]()
+          player.playerName = userName
+        }
+        moveAlong = (userRace !== "");
         break;
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
@@ -63,13 +65,6 @@ $(document).ready(function() {
     if (moveAlong) {
       $(".card").hide();
       $("." + nextCard).show();
-      // Show / hide buttons on the class page
-      if(nextCard === "card--class") {
-        $(".class__button").hide()
-        for(var i = 0; i < player.allowedClasses.length; i++) {
-          $("#" + player.allowedClasses[i]).show()
-        }
-      }
     }
   });
 
@@ -82,9 +77,21 @@ $(document).ready(function() {
     $("." + previousCard).show();
   });
 
+  /*
+    When a button with a race on it is clicked,
+    Assign that id to a variable
+   */
   $(".race__link").click(function(e) {
     userRace = e.target.closest('.race__link').id
   });
+
+  /*
+    When a button with a class on it is clicked,
+    Assign that id to a variable
+   */
+  $(".class__link").click(function(e) {
+    userClass = e.target.closest('.class__link').id
+  })
 
 });
 

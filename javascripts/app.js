@@ -51,6 +51,7 @@ $(document).ready(function() {
         if(userRace === "Human") {
           player = new Gauntlet.Combatants.Human()
         }
+        player.playerName = userName
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
@@ -77,7 +78,6 @@ $(document).ready(function() {
   });
 
   $(".race__link").click(function(e) {
-    console.dir(e.target.closest('.race__link').id)
     userRace = e.target.closest('.race__link').id
   });
 

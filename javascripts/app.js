@@ -51,6 +51,9 @@ $(document).ready(function() {
         if(userRace === "Human") {
           player = new Gauntlet.Combatants.Human()
         }
+        else if (userRace === "Elf") {
+          player = new Gauntlet.Combatants.Elf()
+        }
         player.playerName = userName
         moveAlong = ($("#player-name").val() !== "");
         break;

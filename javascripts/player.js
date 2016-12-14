@@ -60,7 +60,7 @@ Gauntlet.Combatants.Player.prototype.generateClass = function() {
 };
 
 /*
-  Define the base properties for a human in a 
+  Define the base properties for a human in a
   constructor function.
  */
 Gauntlet.Combatants.Human = function() {
@@ -77,9 +77,28 @@ Gauntlet.Combatants.Human = function() {
 };
 Gauntlet.Combatants.Human.prototype = new Gauntlet.Combatants.Player();
 
+/*
+  Define the base properties for an elf in a
+  constructor function.
+ */
+Gauntlet.Combatants.Elf = function() {
+  var randomSkin;
+
+  this.species = "Elf";
+  this.intelligence = this.intelligence + 10;
+  this.health = this.health + 20;
+
+  this.skinColors.push("green", "brown");
+  randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
+  this.skinColor = this.skinColors[randomSkin];
+
+  this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Monk"];
+};
+Gauntlet.Combatants.Elf.prototype = new Gauntlet.Combatants.Player();
+
 
 /*
-  Define the base properties for a monster in a 
+  Define the base properties for a monster in a
   constructor function.
  */
 Gauntlet.Combatants.Monster = function() {

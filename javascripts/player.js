@@ -59,6 +59,12 @@ Gauntlet.Combatants.Player.prototype.generateClass = function() {
   return this.class;
 };
 
+//Function to assign class to player or enemy based on argument
+Gauntlet.Combatants.Player.prototype.assignClass = function(userClass) {
+  this.class = new Gauntlet.GuildHall[userClass]
+  this.health += this.class.healthBonus;
+};
+
 /*
   Define the base properties for a human in a
   constructor function.

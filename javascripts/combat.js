@@ -1,22 +1,26 @@
 var aStrength = 0;
 var aHealth = 0;
 var outputPlayer ="";
+var bStrength = 0;
+var bHealth = 0;
+var outputEnemy ="";
 
 $("#attack").click(function(e){
-    console.log("Button clicked")
+// Player Render
     aStrength = Number(player.strength);
-    console.log("Player strength: ", player.strength);
     aHealth = Number(player.health);
-    console.log("Player health: ", aHealth, player.playerName);; //**** Meassage *******************************
-    displayCombat();
-})
-
-
-function displayCombat(e) {
-  console.log("Player Name: ", player.name);
-  outputPlayer = `<h2>${player.playerName}</h2>
-                  <h3>${aStrength}</h3>
-                  <h3>${aHealth}</h3>
+    outputPlayer += `<h2>${player.playerName}</h2>
+                  <h3>Strength: ${aStrength}</h3>
+                  <h3>Health: ${aHealth}</h3>
                  `
-  document.getElementById("playerHere").innerHTML = outputPlayer;
-}
+    document.getElementById("playerHere").innerHTML = outputPlayer;
+// Enemy Render
+    console.log("Enemy Name: ", enemy.name);
+    outputEnemy += `<h2>${enemy.playerName}</h2>
+                  <h3>Strength: ${bStrength}</h3>
+                  <h3>Health: ${bHealth}</h3>
+                 `
+    document.getElementById("enyHere").innerHTML = outputPlayer;
+// Call the Combat!
+   displayCombat();
+})

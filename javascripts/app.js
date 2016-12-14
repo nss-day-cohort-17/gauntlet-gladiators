@@ -55,7 +55,10 @@ $(document).ready(function() {
         moveAlong = (userRace !== "");
         break;
       case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
+        if(userClass !== "") {
+          player.assignClass(userClass)
+        }
+        moveAlong = (userClass !== "");
         break;
       case "card--battleground":
         moveAlong = ($("#player-name").val() !== "");
@@ -65,7 +68,13 @@ $(document).ready(function() {
     if (moveAlong) {
       $(".card").hide();
       $("." + nextCard).show();
+      // Hides class buttons that do not apply to that race
+      if(nextCard === "card--weapon") {
+
+      }
     }
+
+
   });
 
   /*

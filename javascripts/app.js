@@ -69,8 +69,11 @@ $(document).ready(function() {
       $(".card").hide();
       $("." + nextCard).show();
       // Hides class buttons that do not apply to that race
-      if(nextCard === "card--weapon") {
-
+      if(nextCard === "card--class") {
+        $(".class__button").hide()
+        for(var i = 0; i < player.allowedClasses.length; i++) {
+          $('#' + player.allowedClasses[i]).parent().parent().show()
+        }
       }
     }
 

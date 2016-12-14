@@ -11,13 +11,22 @@ orc.generateClass();
 orc.setWeapon(new BroadSword());
 console.log(orc.toString());
 
+// Global variables to store user selection of name, race, class, weapon
+var userName = ""
+var userRace = ""
+var userClass = ""
+var userWeapon = ""
+
+var player;
+var enemy;
+
 /*
   Test code to generate a spell
  */
 var spell = new Gauntlet.SpellBook.Sphere();
 console.log("spell: ", spell.toString());
 
-
+// Navigates through pages using show and hide attributes
 $(document).ready(function() {
   /*
     Show the initial view that accepts player name
@@ -34,9 +43,15 @@ $(document).ready(function() {
 
     switch (nextCard) {
       case "card--race":
+        userName = $("#player-name").val();
         moveAlong = ($("#player-name").val() !== "");
         break;
+      // Generate player object upon race selection
       case "card--class":
+        if(userRace === "Human") {
+          player = new Gauntlet.Combatants.Human()
+        }
+        player.playerName = userName
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
@@ -62,4 +77,10 @@ $(document).ready(function() {
     $("." + previousCard).show();
   });
 
+  $(".race__link").click(function(e) {
+    userRace = e.target.closest('.race__link').id
+  });
+
 });
+
+

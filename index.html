@@ -44,6 +44,18 @@
           </a>
         </div>
       </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card__button">
+              <a class="race__link btn btn--big btn--blue" id="Human" href="#">
+                <span class="btn__prompt">></span>
+                <span class="btn__text">Human</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="card__button">
         <a class="card__link btn btn--big btn--orange"
            href="#"
@@ -181,30 +193,41 @@
            href="#"
            next="card--battleground">
           <span class="btn__prompt">></span>
-          <span class="btn__text">defeat your enemies</span>
+          <span class="btn__text">Go to battle</span>
         </a>
       </div>
     </section>
-<!-- WTO BATTLE -->
+<!-- TO BATTLE!!! -->
     <section id="battleground" class="card card--battleground">
-      <h1>Battle</h1>
-      <a class="card__link btn btn--big btn--orange"
-           href="#"
-           next="card--battleground">
-          <span class="btn__prompt">></span>
-          <span class="btn__text">defeat your enemies</span>
-        </a>
+      <div class="row">
+        <div class="col-md-12"><h1>Battle</h1></div>
+        <div class="col-md-6">
+          <div id="playerHere"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="enyHere"></div>
+        </div>
+        <div class="col-md-12">
+          <a id="attack" class="card__link btn btn--big btn--orange"
+             href="#">
+            <span class="btn__prompt">></span>
+            <span class="btn__text">Attack!</span>
+          </a>
+        </div>
+      </div>
    </section>
 
 
   </article>
 
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="javascripts/utility.js"></script>
   <script src="javascripts/weapons.js"></script>
   <script src="javascripts/classes.js"></script>
   <script src="javascripts/spells.js"></script>
   <script src="javascripts/player.js"></script>
   <script src="javascripts/enemies.js"></script>
+  <script src="javascripts/combat.js"></script>
   <script src="javascripts/app.js"></script>
 
 </body>

@@ -29,3 +29,4 @@ var WarAxe = function() {
 };
 WarAxe.prototype = new Weapon();
 
+var weaponsChest = [Dagger, BroadSword, WarAxe]

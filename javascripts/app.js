@@ -81,7 +81,6 @@ $(document).ready(function() {
           player.spell = new Gauntlet.SpellBook[spellList[random]]()
         }
         console.log(player.toString())
-        createEnemy();
         moveAlong = (userWeapon !== "")
         break;
     }
@@ -110,6 +109,9 @@ $(document).ready(function() {
           $(".weapon__link").removeAttr('disabled')
           $("#Staff").attr('disabled', 'disabled')
         }
+      }
+      if(nextCard === "card--battleground") {
+        loadDisplay();
       }
     }
   });
@@ -175,11 +177,3 @@ function createEnemy() {
   console.log(enemy.toString())
   moveAlong = (userWeapon !== "");
 }
-
-
-
-
-
-
-
-

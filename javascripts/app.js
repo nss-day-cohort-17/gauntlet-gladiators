@@ -1,15 +1,15 @@
 /*
   Test code to generate a human player and an orc player
  */
-var warrior = new Gauntlet.Combatants.Human();
-warrior.setWeapon(new WarAxe());
-warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
+// var warrior = new Gauntlet.Combatants.Human();
+// warrior.setWeapon(new WarAxe());
+// warrior.generateClass();  // This will be used for "Surprise me" option
+// console.log(warrior.toString());
 
-var orc = new Gauntlet.Combatants.Orc();
-orc.generateClass();
-orc.setWeapon(new BroadSword());
-console.log(orc.toString());
+// var orc = new Gauntlet.Combatants.Orc();
+// orc.generateClass();
+// orc.setWeapon(new BroadSword());
+// console.log(orc.toString());
 
 // Global variables to store user selection of name, race, class, weapon
 var userName = ""
@@ -23,8 +23,8 @@ var enemy;
 /*
   Test code to generate a spell
  */
-var spell = new Gauntlet.SpellBook.Sphere();
-console.log("spell: ", spell.toString());
+// var spell = new Gauntlet.SpellBook.Sphere();
+// console.log("spell: ", spell.toString());
 
 // Navigates through pages using show and hide attributes
 $(document).ready(function() {
@@ -76,6 +76,7 @@ $(document).ready(function() {
             player.setWeapon(new weaponsChest[i]())
           }
         }
+        console.log(player.toString())
         // Generate enemy upon enterring battleground
         var random = Math.floor(Math.random() * monsterList.length);
         var randomRace = monsterList[random];

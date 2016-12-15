@@ -151,10 +151,18 @@ function createEnemy() {
   var randomRace = monsterList[random];
   enemy = new Gauntlet.Combatants[randomRace];
   enemy.generateClass();
-  var random = Math.floor(Math.random() * weaponsChest.length);
   // If enemy is magical, give it the staff
   if(enemy.class.magical === true) { enemy.setWeapon(new Staff()); }
-  else {enemy.setWeapon(new weaponsChest[random]());}
+  // Else give it random weapon
+  else {
+    var random = Math.floor(Math.random() * weaponsChest.length);
+    enemy.setWeapon(new weaponsChest[random]());
+    // If accidentally assigned staff, keep trying
+    while(enemy.weapon.name === "staff") {
+      var random = Math.floor(Math.random() * weaponsChest.length);
+      enemy.setWeapon(new weaponsChest[random]());
+    }
+  }
   console.log(enemy.toString())
   moveAlong = (userWeapon !== "");
 }

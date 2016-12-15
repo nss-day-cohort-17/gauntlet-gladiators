@@ -18,3 +18,5 @@ Gauntlet.Combatants.Orc = function() {
 
 Gauntlet.Combatants.Orc.prototype = new Gauntlet.Combatants.Monster();
 
+// Array of names of monster constructor functions
+var monsterList = ["Orc"];

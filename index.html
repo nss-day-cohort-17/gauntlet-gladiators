@@ -229,7 +229,7 @@
             <div class="card__button">
               <a class="weapon__link btn btn--big" id="Dagger" href="#">
                 <span class="btn__prompt"></span>
-                <span class="btn__text"><img src="dagger.jpeg" width="150px" height="150px"></span> 
+                <span class="btn__text"><img src="dagger.jpeg" width="150px" height="150px"></span>
               </a>
             </div>
           </div>
@@ -266,14 +266,18 @@
            href="#"
            next="card--battleground">
           <span class="btn__prompt">></span>
-          <span class="btn__text">Go to battle</span>
+          <span class="btn__text" id="loadIntro">Go to battle</span>
         </a>
       </div>
     </section>
 <!-- TO BATTLE!!! -->
     <section id="battleground" class="card card--battleground">
       <div class="row">
-        <div class="col-md-12"><h1>Battle</h1></div>
+        <div class="col-md-12">
+          <h1 class="center">To Battle With Ye!</h1>
+          <hr>
+          <div id="intro"></div>
+        </div>
         <div class="col-md-6">
           <div id="playerHere"></div>
         </div>
@@ -299,8 +303,7 @@
   <script src="javascripts/spells.js"></script>
   <script src="javascripts/player.js"></script>
   <script src="javascripts/enemies.js"></script>
-  <script src="javascripts/combat.js"></script>
   <script src="javascripts/app.js"></script>
-
+  <script src="javascripts/combat.js"></script>
 </body>
 </html>

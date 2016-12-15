@@ -95,9 +95,19 @@ $(document).ready(function() {
           $('#' + player.allowedClasses[i]).removeAttr('disabled')
         }
       }
+      // Hides physical weapons if class is magical
+      // Hides staff if class is physical
+      if(nextCard === "card--weapon") {
+        if(player.class.magical === true) {
+          $(".weapon__link").attr('disabled', 'disabled')
+          $("#Staff").removeAttr('disabled')
+        }
+        else {
+          $(".weapon__link").removeAttr('disabled')
+          $("#Staff").attr('disabled', 'disabled')
+        }
+      }
     }
-
-
   });
 
   /*

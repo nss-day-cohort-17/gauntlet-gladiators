@@ -33,7 +33,7 @@ Gauntlet.Combatants.Player = function(name) {
       this.health,
       " health. ",
       (this.class.magical) ? "Able to cast " : " Wielding a ",
-      this.weapon.toString(),
+      (this.class.magical) ? (this.spell.name + " of " + this.spell.type) : this.weapon.toString(),
       "!"
     ].join("");
     return output;
@@ -59,6 +59,12 @@ Gauntlet.Combatants.Player.prototype.generateClass = function() {
   return this.class;
 };
 
+//Function to assign class to player or enemy based on argument
+Gauntlet.Combatants.Player.prototype.assignClass = function(userClass) {
+  this.class = new Gauntlet.GuildHall[userClass]
+  this.health += this.class.healthBonus;
+};
+
 /*
   Define the base properties for a human in a
   constructor function.
@@ -73,7 +79,7 @@ Gauntlet.Combatants.Human = function() {
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
   this.skinColor = this.skinColors[randomSkin];
 
-  this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Monk"];
+  this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Wizard"];
 };
 Gauntlet.Combatants.Human.prototype = new Gauntlet.Combatants.Player();
 
@@ -92,7 +98,7 @@ Gauntlet.Combatants.Elf = function() {
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
   this.skinColor = this.skinColors[randomSkin];
 
-  this.allowedClasses = ["Sorcerer", "Shaman", "Monk"];
+  this.allowedClasses = ["Valkyrie", "Sorcerer", "Shaman"];
 };
 Gauntlet.Combatants.Elf.prototype = new Gauntlet.Combatants.Player();
 
@@ -105,6 +111,23 @@ Gauntlet.Combatants.Monster = function() {
   this.health = this.health - 30;
   this.intelligence = this.intelligence -20;
   this.strength = this.strength + 30;
+
+  this.toString = function() {
+    var output = ["A ",
+      this.skinColor,
+      " skinned ",
+      this.species,
+      " ",
+      this.class,
+      " with ",
+      this.health,
+      " health. ",
+      (this.class.magical) ? "Able to cast " : " Wielding a ",
+      (this.class.magical) ? (this.spell.name + " of " + this.spell.type) : this.weapon.toString(),
+      "!"
+    ].join("");
+    return output;
+  };
 };
 
 Gauntlet.Combatants.Monster.prototype = new Gauntlet.Combatants.Player();

@@ -29,3 +29,11 @@ var WarAxe = function() {
 };
 WarAxe.prototype = new Weapon();
 
+var Staff = function() {
+  this.name = "staff";
+  this.damage = 15;
+  this.hands = 2;
+};
+Staff.prototype = new Weapon();
+
+var weaponsChest = [Dagger, BroadSword, WarAxe, Staff]

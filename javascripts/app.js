@@ -139,6 +139,9 @@ $(document).ready(function() {
    */
   $(".class__link").click(function(e) {
     userClass = e.target.closest('.class__link').id
+    $(e.target.closest('.class__link')).addClass('animated rollIn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      $(this).removeClass('animated rollIn')
+    })
   })
 
   /*

@@ -111,6 +111,23 @@ Gauntlet.Combatants.Monster = function() {
   this.health = this.health - 30;
   this.intelligence = this.intelligence -20;
   this.strength = this.strength + 30;
+
+  this.toString = function() {
+    var output = ["A ",
+      this.skinColor,
+      " skinned ",
+      this.species,
+      " ",
+      this.class,
+      " with ",
+      this.health,
+      " health. ",
+      (this.class.magical) ? "Able to cast " : " Wielding a ",
+      this.weapon.toString(),
+      "!"
+    ].join("");
+    return output;
+  };
 };
 
 Gauntlet.Combatants.Monster.prototype = new Gauntlet.Combatants.Player();

@@ -33,7 +33,7 @@ Gauntlet.Combatants.Player = function(name) {
       this.health,
       " health. ",
       (this.class.magical) ? "Able to cast " : " Wielding a ",
-      this.weapon.toString(),
+      (this.class.magical) ? (this.spell.name + " of " + this.spell.type) : this.weapon.toString(),
       "!"
     ].join("");
     return output;
@@ -123,7 +123,7 @@ Gauntlet.Combatants.Monster = function() {
       this.health,
       " health. ",
       (this.class.magical) ? "Able to cast " : " Wielding a ",
-      this.weapon.toString(),
+      (this.class.magical) ? (this.spell.name + " of " + this.spell.type) : this.weapon.toString(),
       "!"
     ].join("");
     return output;

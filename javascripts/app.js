@@ -71,17 +71,12 @@ $(document).ready(function() {
       case "card--battleground":
         if(userWeapon === "") {break}
         // Calls the setWeapon function based on weapon selection
-        switch(userWeapon) {
-          case "Dagger":
-            player.setWeapon(new Dagger());
-            break;
-          case "Broad-Sword":
-            player.setWeapon(new BroadSword());
-            break;
-          case "War-Axe":
-            player.setWeapon(new WarAxe());
-            break;
+        for(var i = 0; i < weaponsChest.length; i++) {
+          if(userWeapon === weaponsChest[i].name) {
+            player.setWeapon(new weaponsChest[i]())
+          }
         }
+
         moveAlong = (userWeapon !== "");
         break;
     }

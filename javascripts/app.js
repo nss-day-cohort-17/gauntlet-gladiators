@@ -76,7 +76,14 @@ $(document).ready(function() {
             player.setWeapon(new weaponsChest[i]())
           }
         }
-
+        // Generate enemy upon enterring battleground
+        var random = Math.floor(Math.random() * monsterList.length);
+        var randomRace = monsterList[random];
+        enemy = new Gauntlet.Combatants[randomRace];
+        enemy.generateClass();
+        var random = Math.floor(Math.random() * weaponsChest.length);
+        enemy.setWeapon(new weaponsChest[random]());
+        console.log(enemy.toString())
         moveAlong = (userWeapon !== "");
         break;
     }

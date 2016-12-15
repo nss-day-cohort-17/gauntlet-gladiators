@@ -139,8 +139,9 @@ $(document).ready(function() {
    */
   $(".class__link").click(function(e) {
     userClass = e.target.closest('.class__link').id
-    $(e.target.closest('.class__link')).addClass('animated rollIn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-      $(this).removeClass('animated rollIn')
+    // Also animate the button whenever it's clicked
+    $(e.target.closest('.class__link')).addClass('animated pulse').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      $(this).removeClass('animated pulse')
     })
   })
 

@@ -45,6 +45,12 @@ $(document).ready(function() {
       case "card--race":
         userName = $("#player-name").val();
         moveAlong = (userName !== "");
+        // If no username inputed, shake input field
+        if(moveAlong === false) {
+          $('#player-name').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $(this).removeClass('animated shake')
+          })
+        }
         break;
       // Generate player object upon race selection
       case "card--class":

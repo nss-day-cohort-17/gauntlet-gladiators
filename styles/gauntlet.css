@@ -111,6 +111,15 @@ body {
   width:100%;
   background-color:#red;
 }
+<<<<<<< HEAD
 h1{
   text-align: center;
+=======
+
+img {
+  border-radius: 10%;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
+  box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
+>>>>>>> ef43fcd1371c310c5fbe5a06d1d024aa97c7a1de
 }

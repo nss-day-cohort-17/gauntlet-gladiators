@@ -69,7 +69,20 @@ $(document).ready(function() {
         moveAlong = (userClass !== "");
         break;
       case "card--battleground":
-        moveAlong = ($("#player-name").val() !== "");
+        if(userWeapon === "") {break}
+        // Calls the setWeapon function based on weapon selection
+        switch(userWeapon) {
+          case "Dagger":
+            player.setWeapon(new Dagger());
+            break;
+          case "Broad-Sword":
+            player.setWeapon(new BroadSword());
+            break;
+          case "War-Axe":
+            player.setWeapon(new WarAxe());
+            break;
+        }
+        moveAlong = (userWeapon !== "");
         break;
     }
 
@@ -114,6 +127,14 @@ $(document).ready(function() {
    */
   $(".class__link").click(function(e) {
     userClass = e.target.closest('.class__link').id
+  })
+
+  /*
+    When a button with a weapon on it is clicked,
+    Assign that weapon to a variable
+   */
+  $(".weapon__link").click(function(e) {
+    userWeapon = e.target.closest('.weapon__link').id
   })
 
 });

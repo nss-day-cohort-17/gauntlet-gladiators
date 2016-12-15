@@ -54,8 +54,16 @@ $(document).ready(function() {
         }
         moveAlong = (userRace !== "");
         break;
+      // Add class upon moving to next page
       case "card--weapon":
-        if(userClass !== "") {
+        if(userClass === "") {break}
+        // randomize class if the user selected Surprise Me
+        if(userClass === "Surprise-Me") {
+          player.generateClass()
+          userClass = player.class.name
+        }
+        // otherwise, assign them class they selected
+        else {
           player.assignClass(userClass)
         }
         moveAlong = (userClass !== "");
@@ -70,9 +78,12 @@ $(document).ready(function() {
       $("." + nextCard).show();
       // Hides class buttons that do not apply to that race
       if(nextCard === "card--class") {
-        $(".class__button").hide()
+        // add this: disabled="disabled"
+        $(".class__link").attr('disabled', 'disabled')
+        $("#Surprise-Me").removeAttr('disabled')
         for(var i = 0; i < player.allowedClasses.length; i++) {
-          $('#' + player.allowedClasses[i]).parent().parent().show()
+          // Traverses up to .col div for each class button in array
+          $('#' + player.allowedClasses[i]).removeAttr('disabled')
         }
       }
     }

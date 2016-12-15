@@ -76,16 +76,13 @@ $(document).ready(function() {
             player.setWeapon(new weaponsChest[i]())
           }
         }
+        if(player.class.magical === true) {
+          var random = Math.floor(Math.random() * spellList.length);
+          player.spell = new Gauntlet.SpellBook[spellList[random]]()
+        }
         console.log(player.toString())
-        // Generate enemy upon enterring battleground
-        var random = Math.floor(Math.random() * monsterList.length);
-        var randomRace = monsterList[random];
-        enemy = new Gauntlet.Combatants[randomRace];
-        enemy.generateClass();
-        var random = Math.floor(Math.random() * weaponsChest.length);
-        enemy.setWeapon(new weaponsChest[random]());
-        console.log(enemy.toString())
-        moveAlong = (userWeapon !== "");
+        createEnemy();
+        moveAlong = (userWeapon !== "")
         break;
     }
 
@@ -102,9 +99,19 @@ $(document).ready(function() {
           $('#' + player.allowedClasses[i]).removeAttr('disabled')
         }
       }
+      // Hides physical weapons if class is magical
+      // Hides staff if class is physical
+      if(nextCard === "card--weapon") {
+        if(player.class.magical === true) {
+          $(".weapon__link").attr('disabled', 'disabled')
+          $("#Staff").removeAttr('disabled')
+        }
+        else {
+          $(".weapon__link").removeAttr('disabled')
+          $("#Staff").attr('disabled', 'disabled')
+        }
+      }
     }
-
-
   });
 
   /*
@@ -141,5 +148,38 @@ $(document).ready(function() {
   })
 
 });
+
+function createEnemy() {
+  // Generate enemy upon enterring battleground
+  var random = Math.floor(Math.random() * monsterList.length);
+  var randomRace = monsterList[random];
+  enemy = new Gauntlet.Combatants[randomRace];
+  enemy.generateClass();
+  // If enemy is magical, give it the staff
+  // Assign it random spell from spellList array
+  if(enemy.class.magical === true) {
+    enemy.setWeapon(new Staff());
+    var random = Math.floor(Math.random() * spellList.length);
+    enemy.spell = new Gauntlet.SpellBook[spellList[random]]()
+  }
+  // Else give it random weapon
+  else {
+    var random = Math.floor(Math.random() * weaponsChest.length);
+    enemy.setWeapon(new weaponsChest[random]());
+    // If accidentally assigned staff, keep trying
+    while(enemy.weapon.name === "staff") {
+      var random = Math.floor(Math.random() * weaponsChest.length);
+      enemy.setWeapon(new weaponsChest[random]());
+    }
+  }
+  console.log(enemy.toString())
+  moveAlong = (userWeapon !== "");
+}
+
+
+
+
+
+
 
 

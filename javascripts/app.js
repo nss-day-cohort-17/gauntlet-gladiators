@@ -76,6 +76,10 @@ $(document).ready(function() {
             player.setWeapon(new weaponsChest[i]())
           }
         }
+        if(player.class.magical === true) {
+          var random = Math.floor(Math.random() * spellList.length);
+          player.spell = new Gauntlet.SpellBook[spellList[random]]()
+        }
         console.log(player.toString())
         createEnemy();
         moveAlong = (userWeapon !== "")
@@ -152,7 +156,12 @@ function createEnemy() {
   enemy = new Gauntlet.Combatants[randomRace];
   enemy.generateClass();
   // If enemy is magical, give it the staff
-  if(enemy.class.magical === true) { enemy.setWeapon(new Staff()); }
+  // Assign it random spell from spellList array
+  if(enemy.class.magical === true) {
+    enemy.setWeapon(new Staff());
+    var random = Math.floor(Math.random() * spellList.length);
+    enemy.spell = new Gauntlet.SpellBook[spellList[random]]()
+  }
   // Else give it random weapon
   else {
     var random = Math.floor(Math.random() * weaponsChest.length);

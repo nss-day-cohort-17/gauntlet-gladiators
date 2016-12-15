@@ -13,9 +13,17 @@ document.getElementById("attack").addEventListener("click", attackNow);
 /* Display ======================================*/
 /*==============================================*/
 function loadDisplay(){
+// Render description of fight
+  // var y = player.playerName;
+  // console.log(y, player.playerName);//TEST**********
+  // var z = enemy.species;
+  // console.log(z, enemy.species);//TEST***********
+  // var x = `<p>${y} is facing a ${z}!</p>`
+  var x = `<h2> TESTING </h2>`
+  document.getElementById("intro").innerHTML = x;
 // Player Render
-  aStrength = player.strength + player.weapon.damage;
-  aHealth = player.health + player.class.healthBonus;
+  aStrength = Number(player.strength + player.weapon.damage);
+  aHealth = Number(player.health + player.class.healthBonus);
   outputPlayer = `<h2>${player.playerName}</h2>
                   <h3>Strength: ${aStrength}</h3>
                   <h3>Health: ${aHealth}</h3>
@@ -31,11 +39,6 @@ function loadDisplay(){
                  <h3>Health: ${bHealth}</h3>
                 `
   document.getElementById("enyHere").innerHTML = outputEnemy;
-  var x = "";
-  var y = player.playerName;
-  var z = enemy.species;
-  x = `<p>${y} is facing a ${z}!</p>`
-  document.getElementById("intro").innerHTML = x;
 }
 
 // <p>${player.toString()} is facing ${enemy.toString()}</p>

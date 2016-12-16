@@ -1,13 +1,18 @@
 
 body {
+  background-color:red;
+  background-image:url("/imgs/tweed.png");
   font-family: "Lato", "Helvetica", "sans-serif";
   font-family: 'Shadows Into Light', cursive;
   font-family: 'Mirza', cursive;
   margin: 0;
   padding: 10px;
   font-size: 3em;
-}
 
+}
+article{
+  background-image: url(imgs/tweed.png);
+}
 .field {
   margin: 20px 0 0 0;
 }
@@ -120,4 +125,7 @@ card__button, .btn--blue, .btn--big {
   -webkit-box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
   -moz-box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
   box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
+}
+.clear{
+  display: none;
 }

@@ -23,10 +23,6 @@ body {
 }
 
 #title-screen{
-  background: url("../imgs/bg.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 0px -50px;
   height:650px;
 }
 /*
@@ -138,4 +134,13 @@ box-shadow: 72px 40px 34px -21px rgba(168,10,10,1)
 
 .clear{
   display: none;
+}
+.bottom{
+  margin-top: 200px;
+}
+#headlineStyle{
+  margin-top: 200px;
+  text-align: center;
+  font-size: 3.0em;
+  font-weight: bolder;
 }

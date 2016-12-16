@@ -50,7 +50,8 @@ function loadDisplay(){
     playerPic = `<img src="imgs/human.png" alt="Human fighter">`
     document.getElementById("playerImg").innerHTML = playerPic;
   }else{
-
+    playerPic = `<img src="imgs/elf.png" alt="Elven fighter">`
+    document.getElementById("playerImg").innerHTML = playerPic;
   }
   // Enemy Render
   enemy.name = enemy.species;
@@ -72,6 +73,13 @@ function loadDisplay(){
                     <h3>Health: ${bHealth}</h3>
                  `
     document.getElementById("enyHere").innerHTML = outputEnemy;
+  }
+  if(enemy.species === "Orc"){
+    enyPic = `<img src="imgs/orc.png" alt="Orc fighter">`
+    document.getElementById("enyImg").innerHTML = enyPic;
+  }else{
+    enyPic = `<img src="imgs/giant.png" alt="Giant fighter">`
+    document.getElementById("enyImg").innerHTML = enyPic;
   }
 }
 //

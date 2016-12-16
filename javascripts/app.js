@@ -139,7 +139,11 @@ $(document).ready(function() {
    */
   $(".class__link").click(function(e) {
     userClass = e.target.closest('.class__link').id
+     $(e.target.closest('.class__link')).addClass("animated");
   })
+  function removeAnimation () {
+      $("class__link").removeAnimationClasses("animmated rollIn")
+     }
 
   /*
     When a button with a weapon on it is clicked,

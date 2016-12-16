@@ -105,10 +105,14 @@ body {
   margin-right: -10px;
   font-weight: 600;
   background-color: #333;
-  opacity: .4;
+  opacity: .9;
   border-radius: 5px 0 0 5px;
   left: 37px;
   float: left;
+}
+.btn__prompt__2 {
+  background-color: #fff;
+  opacity: .9;
 }
 
 .btn__text {
@@ -125,12 +129,11 @@ body {
   text-align: center;
 }
 
-card__button, .btn--blue, .btn--big {
+card__button, img {
   border-radius: 10%;
- -webkit-box-shadow: 72px 40px 34px -21px rgba(168,10,10,1);
--moz-box-shadow: 72px 40px 34px -21px rgba(168,10,10,1);
-box-shadow: 72px 40px 34px -21px rgba(168,10,10,1)
-}
+ -webkit-box-shadow: 3px 3px 12px 7px rgba(22, 20, 22, 0.75);
+-moz-box-shadow:    3px 3px 12px 7px rgba(22, 20, 22, 0.75);
+box-shadow:         3px 3px 12px 7px rgba(22, 20, 22, 0.75);
 
 .clear{
   display: none;

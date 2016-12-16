@@ -115,7 +115,7 @@ body {
   text-align: center;
 }
 
-img {
+card__button, .btn--blue, .btn--big {
   border-radius: 10%;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
   -moz-box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);

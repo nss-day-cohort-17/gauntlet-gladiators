@@ -129,11 +129,12 @@ body {
   text-align: center;
 }
 
-card__button, img {
+ img {
   border-radius: 10%;
  -webkit-box-shadow: 3px 3px 12px 7px rgba(22, 20, 22, 0.75);
 -moz-box-shadow:    3px 3px 12px 7px rgba(22, 20, 22, 0.75);
 box-shadow:         3px 3px 12px 7px rgba(22, 20, 22, 0.75);
+}
 
 .clear{
   display: none;
@@ -146,4 +147,14 @@ box-shadow:         3px 3px 12px 7px rgba(22, 20, 22, 0.75);
   text-align: center;
   font-size: 3.0em;
   font-weight: bolder;
+}
+
+.thumbnail:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:100px;
+    height:auto;
+    display:block;
+    z-index:100;
 }

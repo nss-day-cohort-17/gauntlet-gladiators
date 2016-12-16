@@ -31,7 +31,7 @@ $(document).ready(function() {
   /*
     Show the initial view that accepts player name
    */
-  $("#player-setup").show();
+  $("#title-screen").show();
 
   /*
     When any button with card__link class is clicked,
@@ -42,6 +42,9 @@ $(document).ready(function() {
     var moveAlong = false;
 
     switch (nextCard) {
+      case "card--name":
+        moveAlong = true;
+        break
       case "card--race":
         userName = $("#player-name").val();
         moveAlong = (userName !== "");
@@ -139,7 +142,11 @@ $(document).ready(function() {
    */
   $(".class__link").click(function(e) {
     userClass = e.target.closest('.class__link').id
+     $(e.target.closest('.class__link')).addClass("animated");
   })
+  function removeAnimation () {
+      $("class__link").removeAnimationClasses("animmated rollIn")
+     }
 
   /*
     When a button with a weapon on it is clicked,

@@ -1,13 +1,15 @@
 
 body {
+  background-color:red;
+  background-image:url("/imgs/tweed.png");
   font-family: "Lato", "Helvetica", "sans-serif";
   font-family: 'Shadows Into Light', cursive;
   font-family: 'Mirza', cursive;
   margin: 0;
   padding: 10px;
   font-size: 3em;
+  color: white;
 }
-
 .field {
   margin: 20px 0 0 0;
 }
@@ -17,10 +19,12 @@ body {
   padding: 15px 0;
   text-align: center;
   min-width: 500px;
+  color: black !important;
 }
 
-      
-
+#title-screen{
+  height:650px;
+}
 /*
   Section styles
  */
@@ -46,6 +50,11 @@ body {
   Button styles
  */
 
+.btn-img {
+  width: 20px;
+  height: 20px;
+}
+
 .btn {
   text-decoration: none;
   background-color: white;
@@ -68,8 +77,8 @@ body {
 
 .btn--blue {
   border-color: #0074D9;
-  color: white;
-  background-color: #0074D9;
+  color: grey;
+  background-color: white;
 }
 
 .btn--yellow {
@@ -96,10 +105,14 @@ body {
   margin-right: -10px;
   font-weight: 600;
   background-color: #333;
-  opacity: .4;
+  opacity: .9;
   border-radius: 5px 0 0 5px;
   left: 37px;
   float: left;
+}
+.btn__prompt__2 {
+  background-color: #fff;
+  opacity: .9;
 }
 
 .btn__text {
@@ -111,6 +124,42 @@ body {
   width:100%;
   background-color:#red;
 }
-h1{
+
+.center{
   text-align: center;
+}
+
+ img {
+  border-radius: 10%;
+ -webkit-box-shadow: 3px 3px 12px 7px rgba(22, 20, 22, 0.75);
+-moz-box-shadow:    3px 3px 12px 7px rgba(22, 20, 22, 0.75);
+box-shadow:         3px 3px 12px 7px rgba(22, 20, 22, 0.75);
+}
+.move-center{
+  display:block;
+  margin: 0 auto;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+.clear{
+  display: none;
+}
+.bottom{
+  margin-top: 200px;
+}
+#headlineStyle{
+  margin-top: 200px;
+  text-align: center;
+  font-size: 3.0em;
+  font-weight: bolder;
+}
+
+.thumbnail:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:100px;
+    height:auto;
+    display:block;
+    z-index:100;
 }

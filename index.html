@@ -14,6 +14,24 @@
 <body>
 
   <article id="game-container">
+<!-- TITLE PAGE -->
+    <section id="title-screen" class="card card--title">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 id="headlineStyle" class="animated flipInY">Gauntlet &trade;</h1>
+        </div>
+        <div class="col-md-12">
+          <div class="card__button">
+            <a class="card__link btn btn--big btn--orange bottom"
+               href="#"
+               next="card--name">
+              <span class="btn__prompt">></span>
+              <span class="btn__text">Begin your Adventure!</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 <!-- PLAYER NAME -->
     <section id="player-setup" class="card card--name">
       <div class="card__prompt">
@@ -49,15 +67,15 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="card__button">
-              <a class="race__link btn btn--big btn--blue animated rollIn" id="Human" href="#">
-                <span class="btn__prompt">></span>
+              <a class="race__link btn btn--big" id="Human" href="#">
+                <img src="imgs/human.png" width="50px" height="50px">
                 <span class="btn__text">Human</span>
               </a>
             </div>
           </div>
           <div class="card__button">
-              <a class="race__link btn btn--big btn--blue animated rollIn" id="Elf" href="#">
-                <span class="btn__prompt">></span>
+              <a class="race__link btn btn--big" id="Elf" href="#">
+                <img src="imgs/elf.png" width="50px" height="50px">
                 <span class="btn__text">Elf</span>
               </a>
             </div>
@@ -92,7 +110,7 @@
           <div class="col-sm-4 class__button">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue" id="Warrior" href="#">
-                <span class="btn__prompt">></span>
+                <img src="imgs/warrior.jpg" width="50px" height="50px">
                 <span class="btn__text">Warrior</span>
               </a>
             </div>
@@ -101,7 +119,7 @@
           <div class="col-sm-4 class__button">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue"  id="Valkyrie" href="#">
-                <span class="btn__prompt">></span>
+                <img src="imgs/valkyrie.jpg" width="50px" height="50px">
                 <span class="btn__text">Valkyrie</span>
               </a>
             </div>
@@ -110,7 +128,7 @@
           <div class="col-sm-4 class__button">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue" id="Berserker" href="#">
-                <span class="btn__prompt">></span>
+                <img src="imgs/berserker.jpg" width="50px" height="50px">
                 <span class="btn__text">Berserker</span>
               </a>
             </div>
@@ -120,7 +138,7 @@
           <div class="col-sm-4 class__button">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue"  id="Monk" href="#">
-                <span class="btn__prompt">></span>
+                <img src="imgs/monk.jpg" width="50px" height="50px">
                 <span class="btn__text">Monk</span>
               </a>
             </div>
@@ -129,7 +147,7 @@
           <div class="col-sm-4 class__button">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue"  id="Wizard" href="#">
-                <span class="btn__prompt">></span>
+                <img src="imgs/wizard.jpg" width="50px" height="50px">
                 <span class="btn__text">Wizard</span>
               </a>
             </div>
@@ -138,7 +156,7 @@
           <div class="col-sm-4 class__button">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue"  id="Sorcerer" href="#">
-                <span class="btn__prompt">></span>
+                <img src="imgs/scorcerer.jpg" width="50px" height="50px">
                 <span class="btn__text">Sorcerer</span>
               </a>
             </div>
@@ -147,7 +165,7 @@
           <div class="col-sm-4 class__button">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue"  id="Conjuerer" href="#">
-                <span class="btn__prompt">></span>
+                <img src="imgs/conjuer.jpg" width="50px" height="50px">
                 <span class="btn__text">Conjurer</span>
               </a>
             </div>
@@ -156,7 +174,7 @@
           <div class="col-sm-4 class__button">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue"  id="Shaman" href="#">
-                <span class="btn__prompt">></span>
+                <img src="imgs/shaman.jpg" width="50px" height="50px">
                 <span class="btn__text">Shaman</span>
               </a>
             </div>
@@ -164,35 +182,7 @@
 
           <div class="col-sm-4 class__button">
             <div class="card__button">
-              <a class="class__link btn btn--big btn--blue"  id="Thief" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Thief</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-sm-4 class__button">
-            <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" id="Ninja" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Ninja</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-sm-4 class__button">
-            <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" id="Assassin" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Assassin</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-sm-4 class__button">
-            <div class="card__button">
               <a class="class__link btn btn--big btn--yellow" id="Surprise-Me" href="#">
-                <span class="btn__prompt">></span>
                 <span class="btn__text">surprise me</span>
               </a>
             </div>
@@ -227,33 +217,33 @@
         <div class="row">
           <div class="col-sm-4 weapon__button">
             <div class="card__button">
-              <a class="weapon__link btn btn--big btn--blue" id="Dagger" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Dagger</span>
+              <a class="weapon__link btn" id="Dagger" href="#">
+                <span class="btn__prompt"></span>
+                <span class="btn__text"><img src="imgs/dagger.jpeg" width="150px" height="150px"></span>
               </a>
             </div>
           </div>
           <div class="col-sm-4 weapon__button">
             <div class="card__button">
-              <a class="weapon__link btn btn--big btn--blue" id="BroadSword" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Broad Sword</span>
+              <a class="weapon__link btn" id="BroadSword" href="#">
+                <span class="btn__prompt"></span>
+                <span class="btn__text"><img src="imgs/broad_sword.jpg" width="150px" height="150px"></span>
               </a>
             </div>
           </div>
           <div class="col-sm-4 weapon__button">
             <div class="card__button">
-              <a class="weapon__link btn btn--big btn--blue" id="WarAxe" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">War Axe</span>
+              <a class="weapon__link btn" id="WarAxe" href="#">
+                <span class="btn__prompt"></span>
+                <span class="btn__text"><img src="imgs/war_axe.jpg" width="150px" height="150px"></span>
               </a>
             </div>
           </div>
           <div class="col-sm-4 weapon__button">
             <div class="card__button">
-              <a class="weapon__link btn btn--big btn--blue" id="Staff" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Staff</span>
+              <a class="weapon__link btn" id="Staff" href="#">
+                <span class="btn__prompt"></span>
+                <span class="btn__text"><img src="imgs/magic_staff.jpg" width="150px" height="150px"></span>
               </a>
             </div>
           </div>
@@ -274,15 +264,21 @@
     <section id="battleground" class="card card--battleground">
       <div class="row">
         <div class="col-md-12">
-          <h1>To Battle With Ye!</h1>
+          <h1 class="center">To Battle With Ye!</h1>
           <hr>
-          <div id="intro"></div>
+          <div id="intro" class="move-center"></div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <div id="playerHere"></div>
         </div>
-        <div class="col-md-6">
+         <div class="col-md-3">
+          <div id="playerImg"></div>
+        </div>
+        <div class="col-md-3">
           <div id="enyHere"></div>
+        </div>
+         <div class="col-md-3">
+          <div id="enyImg"></div>
         </div>
         <div class="col-md-12">
           <a id="attack" class="card__link btn btn--big btn--orange"
@@ -290,6 +286,9 @@
             <span class="btn__prompt">></span>
             <span class="btn__text">Attack!</span>
           </a>
+        </div>
+        <div class="col-md-12">
+          <div id="finalImgPlace"></div>
         </div>
       </div>
    </section>

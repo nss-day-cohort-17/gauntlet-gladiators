@@ -73,10 +73,12 @@ function attackNow(e) {
 console.log("Attack Clicked");
 // Player Attacks Enemy
   if(player.class.magical === true){
-    bHealth = bHealth - (aPower / 3);
+    var bH = bHealth - (aPower / 3);
+    bHealth = Math.floor(bH);
     console.log("After hit", bHealth);
   }else{
-    bHealth = bHealth - (aStrength / 3);
+    bH = bHealth - (aStrength / 3);
+    bHealth = Math.floor(bH);
   }
   if(bHealth <= 0){
     outputEnemy =`<h2>${enemy.species}</h2>
@@ -92,10 +94,12 @@ console.log("Attack Clicked");
   }
 // Enemy Attacks Player
   if(enemy.class.magical === true){
-    aHealth = aHealth - (bPower /3);
+    var aH = aHealth - (bPower /3);
+    aHealth = Math.floor(aH);
     console.log("After hit", aHealth);
   }else{
-    aHealth = aHealth - (bStrength / 3);
+    aH = aHealth - (bStrength / 3);
+    aHealth = Math.floor(aH);
   }
   if(aHealth <= 0){
     outputPlayer =`<h2>${player.playerName}</h2>

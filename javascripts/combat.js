@@ -8,6 +8,9 @@ var bHealth = 0;
 var bPower = 0;
 var outputEnemy ="";
 var x = "";
+var playerPic = "";
+var enyPic = "";
+
 // Listeners
 // document.getElementById("loadIntro").addEventListener("click", loadDisplay);
 document.getElementById("attack").addEventListener("click", attackNow);
@@ -42,6 +45,12 @@ function loadDisplay(){
                   <h3>Health: ${aHealth}</h3>
                  `
     document.getElementById("playerHere").innerHTML = outputPlayer;
+  }
+  if(player.species === "Human"){
+    playerPic = `<img src="imgs/human.png" alt="Human fighter">`
+    document.getElementById("playerImg").innerHTML = playerPic;
+  }else{
+
   }
   // Enemy Render
   enemy.name = enemy.species;

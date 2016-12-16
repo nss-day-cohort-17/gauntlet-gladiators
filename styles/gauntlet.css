@@ -121,3 +121,6 @@ img {
   -moz-box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
   box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
 }
+.clear{
+  display: none;
+}

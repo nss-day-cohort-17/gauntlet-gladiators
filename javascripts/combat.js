@@ -36,7 +36,7 @@ function loadDisplay(){
                     <h3>Health: ${aHealth}</h3>
                     `
     document.getElementById("playerHere").innerHTML = outputPlayer;
-    console.log("Player spell power: ",player.spell.damage)
+    console.log("Player base spell power: ",player.spell.damage)
   } else {
     aStrength = player.strength + player.weapon.damage;
     outputPlayer = `<h2>${player.playerName}</h2>
@@ -64,7 +64,7 @@ function loadDisplay(){
                     <h3>Health: ${bHealth}</h3>
                     `
     document.getElementById("enyHere").innerHTML = outputEnemy;
-    console.log("Enemy spell power: ",enemy.spell.damage)
+    console.log("Enemy base spell power: ",enemy.spell.damage)
   } else {
     aStrength = enemy.strength + enemy.weapon.damage;
     outputEnemy = `<h2>${enemy.species}</h2>

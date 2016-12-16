@@ -9,10 +9,6 @@ body {
   padding: 10px;
   font-size: 3em;
   color: white;
-
-}
-article{
-  background-image: url(imgs/tweed.png);
 }
 .field {
   margin: 20px 0 0 0;
@@ -23,9 +19,16 @@ article{
   padding: 15px 0;
   text-align: center;
   min-width: 500px;
+  color: black !important;
 }
 
-
+#title-screen{
+  background: url("../imgs/bg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0px -50px;
+  height:650px;
+}
 /*
   Section styles
  */

@@ -131,7 +131,12 @@ card__button, .btn--blue, .btn--big {
 -moz-box-shadow: 72px 40px 34px -21px rgba(168,10,10,1);
 box-shadow: 72px 40px 34px -21px rgba(168,10,10,1)
 }
-
+.move-center{
+  display:block;
+  margin: 0 auto;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
 .clear{
   display: none;
 }

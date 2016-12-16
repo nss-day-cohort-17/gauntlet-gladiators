@@ -10,6 +10,7 @@ var outputEnemy ="";
 var x = "";
 var playerPic = "";
 var enyPic = "";
+var finalImg = "";
 
 // Listeners
 // document.getElementById("loadIntro").addEventListener("click", loadDisplay);
@@ -32,6 +33,8 @@ function loadDisplay(){
   if(player.class.magical === true){
     aPower = player.intelligence + player.spell.damage;
     outputPlayer = `<h2>${player.playerName}</h2>
+                    <h3>${player.weapon}</h3>
+                    <h3>Spell ${player.spell.name} with ${player.spell.type} damge</h3>
                     <h3>Power: ${aPower}</h3>
                     <h3>Health: ${aHealth}</h3>
                     `
@@ -45,8 +48,14 @@ function loadDisplay(){
                  `
     document.getElementById("playerHere").innerHTML = outputPlayer;
   }
-  if(player.species === "Human"){
+  if((player.species === "Human") && (player.class.magical === true)){
+    playerPic = `<img src="imgs/human-wizard.png" alt="Human wizzard">`
+    document.getElementById("playerImg").innerHTML = playerPic;
+  }else if((player.species === "Human") && (player.class.magical !== true)){
     playerPic = `<img src="imgs/human.png" alt="Human fighter">`
+    document.getElementById("playerImg").innerHTML = playerPic;
+  }else if((player.species === "Elf") && (player.class.magical === true)){
+    playerPic = `<img src="imgs/elf-mage.png" alt="Elven mage">`
     document.getElementById("playerImg").innerHTML = playerPic;
   }else{
     playerPic = `<img src="imgs/elf.png" alt="Elven fighter">`
@@ -97,11 +106,12 @@ function attackNow(e) {
   }
   if(bHealth <= 0){
     outputEnemy =`<h2>${enemy.species}</h2>
-                  <h3>is dead.</h3>`
-                  endGame();
+                  <h3 class="move-center">is dead.</h3>`
+                  ////////////////////
     document.getElementById("enyHere").innerHTML = outputEnemy;
-    var x = `<h3 class="center">${enemy.species} is dead!</h3>`
+    var x = `<h3 class="move-center">${enemy.species} is dead!</h3>`
     document.querySelector("#intro").innerHTML = x;
+    endGame();
   }else{
     outputEnemy = `<h2>${enemy.species}</h2>
                   <h3>Health: ${bHealth}</h3>`
@@ -118,11 +128,12 @@ function attackNow(e) {
   }
   if(aHealth <= 0){
     outputPlayer =`<h2>${player.playerName}</h2>
-                    <h3>Is dead.</h3>`
-                    endGame();
+                    <h3 class="move-center">Is dead.</h3>`
+                    //////////////////
     document.getElementById("playerHere").innerHTML = outputPlayer;
-    var x = `<h3 class="center">${player.playerName} is dead!</h3>`
+    var x = `<h3 class="move-center"">${player.playerName} is dead!</h3>`
     document.querySelector("#intro").innerHTML = x;
+    endGame();
   }else{
     outputPlayer =`<h2>${player.playerName}</h2>
                    <h3>Health: ${aHealth}</h3>`
@@ -134,6 +145,12 @@ function attackNow(e) {
 /*==============================================*/
 function endGame(){
   console.log("End Game");
+  document.getElementById("playerHere").innerHTML = "";
+  document.getElementById("enyHere").innerHTML = "";
+  document.getElementById("enyImg").innerHTML = "";
+  document.getElementById("playerImg").innerHTML = "";
+  finalImg = `<img class="move-center" src="imgs/dead.png" alt="dead">`
+  document.getElementById("finalImgPlace").innerHTML = finalImg;
   var clearz = document.getElementById("attack");
   clearz.classList.add("clear");
 }

@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 3em;
+  color: white;
 
 }
 article{
@@ -120,12 +121,13 @@ article{
   text-align: center;
 }
 
-img {
+card__button, .btn--blue, .btn--big {
   border-radius: 10%;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
-  box-shadow: 10px 10px 5px 0px rgba(85,87,105,1);
+ -webkit-box-shadow: 72px 40px 34px -21px rgba(168,10,10,1);
+-moz-box-shadow: 72px 40px 34px -21px rgba(168,10,10,1);
+box-shadow: 72px 40px 34px -21px rgba(168,10,10,1)
 }
+
 .clear{
   display: none;
 }

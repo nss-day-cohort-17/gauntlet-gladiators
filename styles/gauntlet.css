@@ -1,13 +1,18 @@
 
 body {
+  background-color:red;
+  background-image:url("/imgs/tweed.png");
   font-family: "Lato", "Helvetica", "sans-serif";
   font-family: 'Shadows Into Light', cursive;
   font-family: 'Mirza', cursive;
   margin: 0;
   padding: 10px;
   font-size: 3em;
-}
 
+}
+article{
+  background-image: url(imgs/tweed.png);
+}
 .field {
   margin: 20px 0 0 0;
 }
